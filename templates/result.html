@@ -1,0 +1,24 @@
+<!-- templates/result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Transaction Result</h1>
+    <p>User ID: {{ transaction.user_id }}</p>
+    <p>Amount: ${{ transaction.amount }}</p>
+    <p>Fraud Score: {{ transaction.fraud_score }}</p>
+    <p>Risk Level: {{ transaction.risk_level }}</p>
+    {% if transaction.risk_level == 'fraud' %}
+    <p style="color:red;">Warning: This transaction is likely fraudulent!</p>
+    {% elif transaction.risk_level == 'suspicious' %}
+    <p style="color:orange;">Caution: This transaction is suspicious!</p>
+    {% else %}
+    <p style="color:green;">This transaction appears safe.</p>
+    {% endif %}
+</body>
+</html>

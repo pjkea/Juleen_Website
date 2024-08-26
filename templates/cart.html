@@ -1,0 +1,27 @@
+<!-- templates/cart.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Your Shopping Cart</h1>
+    <div class="cart-items">
+        <div class="cart-item">
+            <h2>Product 1</h2>
+            <p>Price: $10.00</p>
+            <p>Quantity: 1</p>
+        </div>
+        <div class="cart-item">
+            <h2>Product 2</h2>
+            <p>Price: $15.00</p>
+            <p>Quantity: 2</p>
+        </div>
+        <!-- Add more cart items as needed -->
+    </div>
+    <a href="{{ url_for('checkout') }}">Proceed to Checkout</a>
+</body>
+</html>

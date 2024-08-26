@@ -1,0 +1,27 @@
+<!-- templates/product.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Our Products</h1>
+    <div class="product-list">
+        <div class="product-item">
+            <h2>Product 1</h2>
+            <p>Price: $10.00</p>
+            <a href="{{ url_for('cart') }}">Add to Cart</a>
+        </div>
+        <div class="product-item">
+            <h2>Product 2</h2>
+            <p>Price: $15.00</p>
+            <a href="{{ url_for('cart') }}">Add to Cart</a>
+        </div>
+        <!-- Add more products as needed -->
+    </div>
+    <a href="{{ url_for('cart') }}">Go to Cart</a>
+</body>
+</html>

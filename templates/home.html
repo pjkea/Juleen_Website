@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Welcome to the E-commerce Site</h1>
+    <a href="{{ url_for('add_product') }}">Add Product</a>
+    <div>
+        {% for product in products %}
+            <div>
+                <h2><a href="{{ url_for('product', product_id=product.id) }}">{{ product.name }}</a></h2>
+                <p>{{ product.description }}</p>
+                <p>${{ product.price }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
